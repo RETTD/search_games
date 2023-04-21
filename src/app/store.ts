@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import gameReducers from './reducers';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    games: gameReducers,
   },
 });
 
@@ -15,3 +15,13 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+
+
+// import { createStore, applyMiddleware } from 'redux';
+// import thunk from 'redux-thunk';
+// import rootReducer from './reducers';
+
+// const store = createStore(rootReducer, applyMiddleware(thunk));
+
+// export default store;
