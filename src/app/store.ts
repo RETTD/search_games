@@ -1,27 +1,22 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import gameReducers from './reducers';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import type { PreloadedState } from '@reduxjs/toolkit'
+import {gameReducer} from './reducers';
 
-export const store = configureStore({
-  reducer: {
-    games: gameReducers,
-  },
-});
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer: gameReducer,
+    preloadedState
+  })
+}
+
+export type RootState = ReturnType<typeof gameReducer>
+export type AppStore = ReturnType<typeof setupStore>
+export type AppDispatch = AppStore['dispatch']
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
   unknown,
   Action<string>
 >;
-
-
-
-// import { createStore, applyMiddleware } from 'redux';
-// import thunk from 'redux-thunk';
-// import rootReducer from './reducers';
-
-// const store = createStore(rootReducer, applyMiddleware(thunk));
-
-// export default store;
