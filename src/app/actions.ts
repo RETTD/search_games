@@ -87,10 +87,10 @@ export const setGames = (games: any[]): SetItemsAction =>{
 export const fetchItemsAction = (
   apiKey: string,
   page: number,
-  // itemsPerPage?: number
-): ThunkAction<void, RootState, unknown, ItemAction> => {
+  searchText?: string
+  ): ThunkAction<void, RootState, unknown, ItemAction> => {
   return async (dispatch) => {
-    const games = await fetchItems(apiKey, page);    
+    const games = await fetchItems(apiKey, page, searchText);    
     dispatch(setGames(games));
   };
 };

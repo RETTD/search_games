@@ -6,9 +6,9 @@ const baseUrl = 'https://api.rawg.io/api/games';
 export const fetchItems = async (
   apiKey: string,
   page: number,
-//   itemsPerPage?: number
+  search?: string
 ) => {
- const url = `${baseUrl}?page=${page}&page_size=10&ordering=-rating&key=${apiKey}`;
+ const url = `${baseUrl}?page=${page}&page_size=10&search=${search}&ordering=-rating&key=${apiKey}`;
   const response = await fetch(
     url,
   );
