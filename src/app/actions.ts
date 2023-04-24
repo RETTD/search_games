@@ -77,8 +77,6 @@ export type ItemAction = SetItemsAction;
 
 export const setGames = (games: any[]): SetItemsAction =>{
   
-  console.log('setItems', games);
-  
   return ({
   type: SET_ITEMS,
   payload: { games }

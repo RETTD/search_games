@@ -52,9 +52,7 @@ export const initialState: ItemState = {
 export const gameReducer = (
   state = initialState,
   action: ItemAction
-): ItemState => {
-  console.log('gameReducer', action.type);
-  
+): ItemState => {  
   switch (action.type) {
     case SET_ITEMS:
       return {

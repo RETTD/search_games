@@ -25,7 +25,7 @@ const MainPage = () => {
     <div>
       <Header setSearchText={setSearchText} searchText={searchText} setApiKey={setApiKey} apiKey={apiKey} />
       <List />
-      <input min={1} max={40000} type='number' style={{ height: '3rem', width: '95%', marginTop: '3rem', backgroundColor: "black", color: 'white', borderWidth: "thin", borderColor: "gray" }} defaultValue={page} onChange={handleChangePage} />
+      <input min={1} max={40000} type='number' style={{ height: '3rem', width: '95%', marginTop: '3rem', marginBottom: '1rem', backgroundColor: "black", color: 'white', borderWidth: "thin", borderColor: "gray" }} defaultValue={page} onChange={handleChangePage} />
     </div>
 
   );
